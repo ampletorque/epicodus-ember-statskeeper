@@ -1,6 +1,6 @@
 StatsKeeper.TeamsController = Ember.ArrayController.extend({
   actions: {
-    sortByTeam: function() {
+    sortByName: function() {
       this.set('sortProperties', ['name']);
     }
   }

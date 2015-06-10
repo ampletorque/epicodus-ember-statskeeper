@@ -1,0 +1,24 @@
+<h1>{{name}}</h1>
+
+<h3>Their stats:</h3>
+<ul>
+
+</ul>
+
+<h4>Shots</h4>
+
+<ol>
+  {{#each shot in shots}}
+    {{#if shot}}<li>success</li>
+    {{else}}<li>fail</li>
+    {{/if}}
+  {{/each}}
+</ol>
+
+<h4>Points:</h4>
+{{points}}
+
+<button class="btn btn-primary" {{action 'success'}}>Success</button>
+<button class="btn btn-primary" {{action 'miss'}}>Miss</button>
+
+{{outlet}}
