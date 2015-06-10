@@ -5,9 +5,7 @@ StatsKeeper.NewPlayerController = Ember.Controller.extend({
       var player = this.store.createRecord('player', {
         name: this.get('playerName'),
         shots: [false, true],
-        points: 0,
-        successes: 0,
-        fails: 0
+        points: 0
       });
 
       player.save();
