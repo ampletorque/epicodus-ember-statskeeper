@@ -1,3 +1,5 @@
+// ignore the top section and the references to it below
+
 StatsKeeper.Player = Ember.Object.extend({
   countBaskets: function() {
     return 5;
