@@ -1,0 +1,9 @@
+<h1>New Team</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Enter in the team name:</label>
+    {{input value=name id="name" class="form-control"}}
+  </div>
+  <button class="btn btn-primary" {{action 'save'}}>Add Team</button>
+</form>

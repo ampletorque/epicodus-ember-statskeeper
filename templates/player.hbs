@@ -1,0 +1,32 @@
+<h1>{{name}}</h1>
+
+<h3>Their stats:</h3>
+<ul>
+
+</ul>
+
+<h4>Shots</h4>
+
+<ol>
+  {{#each shot in shots}}
+    {{#if shot}}<li>success</li>
+    {{else}}<li>fail</li>
+    {{/if}}
+  {{/each}}
+</ol>
+
+<h4>Points:</h4>
+{{points}}
+<h4>Baskets:</h4>
+{{successes}}
+<h4>Fails:</h4>
+{{misses}}
+<h4>Attempted Shots:</h4>
+{{shots.length}}
+<h4>Percentages Made:</h4>
+{{math successes "percent" shots.length}}%
+<br><br>
+<button class="btn btn-primary" {{action 'success'}}>Success</button>
+<button class="btn btn-primary" {{action 'miss'}}>Miss</button>
+
+{{outlet}}
