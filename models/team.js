@@ -11,14 +11,22 @@ StatsKeeper.Team = DS.Model.extend({
   }.property("players"),
   highScorer: function() {
       var playstah;
-      var highscore = 0;
       var playerz = this.get('players');
+      var highscore = 0;
+    //   if (typeof highscore == 'undefined') { highscore = 0; };
+
       playerz.forEach(function(play) {
           if (play.get('points') > highscore) {
               playstah = play;
-              highscore = play.get('score');
+            //   console.log(highscore);
+              highscore = playstah.get('points');
+            //   console.log(playstah);
+            //   console.log(highscore);
+            //   console.log(playstah.get('points'));
+
           }
       })
+    //   alert(playstah.get('points'));
       return playstah;
   }.property("players"),
 

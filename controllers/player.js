@@ -4,7 +4,7 @@ StatsKeeper.PlayerController = Ember.ObjectController.extend({
     success: function() {
       this.get('shots').pushObject(true);
     //   var successes = player.get('baskets');
-    //   alert(" successes: " + successes);
+    //   (" successes: " + successes);
       var successes = this.get('successes');
       var points = (successes+1)*2;
       this.set('successes', successes+1);
@@ -12,12 +12,10 @@ StatsKeeper.PlayerController = Ember.ObjectController.extend({
       this.get('model').save();
     },
     miss: function() {
-      var player = this.get('controllers.player.model');
-      var misses = player.get('misses');
-      var fails = player.get('fails');
-      player.set('fails', fails+1);
-      player.get('shots').pushObject(false);
-      player.save();
+      this.get('shots').pushObject(false);
+      var misses = this.get('misses');
+      this.set('misses', misses+1);
+      this.get('model').save();
     }
   }
 });

@@ -4,6 +4,7 @@ StatsKeeper.Player = DS.Model.extend({
   points: DS.attr(),
   successes: DS.attr(),
   misses: DS.attr(),
+  steam: DS.belongsTo('team', {async: true}),
   //Computed Properties attempt
   // baskets: function() {
   //   var shotcount = this.get('shots');
@@ -25,5 +26,17 @@ StatsKeeper.Player = DS.Model.extend({
   //   }
   //   return count;
   // }.property('shots'),
-  Team: DS.belongsTo('team', {async: true})
+
+  isHighScorer: function() {
+      var thisTeam = this.get('steam');
+      var highsc = thisTeam.get('highScorer') || "fdsaf";
+      console.log(thisTeam.get('highScorer').get('name'));
+      var teamHighScorer = thisTeam.get('highScorer');
+      if(teamHighScorer.get('id') === this.get('id')) {
+          return true;
+      } else {
+          return false;
+      }
+  }.property('steam'),
+
 });
