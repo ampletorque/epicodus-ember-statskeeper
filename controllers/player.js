@@ -1,18 +1,28 @@
 StatsKeeper.PlayerController = Ember.ObjectController.extend({
-  needs: ['player'],
+ needs: ['team'],
 
   actions: {
     success: function() {
-      var player = this.get('controllers.player.model');
-      player.get('shots').pushObject(true);
+    //   alert(this.get('name'));
+    // var player = this.store.find();
+
+    // alert(player.name);
+      this.get('shots').pushObject(true);
     //   var successes = player.get('baskets');
     //   alert(" successes: " + successes);
+      var successes = this.get('successes');
+      var points = (successes+1)*2;
+      this.set('successes', successes+1);
+      this.set('points', points);
+      this.get('model').save();
 
-      var successes = player.get('successes');
-      player.set('successes', successes+1);
-      player.set('points', ((successes+1)*2));
+      var team = this.get('controllers.team.model');
+// alert(team.get('name'));
 
-      player.save();
+    //   var newteam = this.get('controllers.team.model');
+    //   var score = newteam.get('score');
+    //   newteam.set('score', score+points);
+
     },
     miss: function() {
       var player = this.get('controllers.player.model');
