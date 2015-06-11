@@ -26,17 +26,17 @@ StatsKeeper.Player = DS.Model.extend({
   //   }
   //   return count;
   // }.property('shots'),
-
-  isHighScorer: function() {
-      var thisTeam = this.get('steam');
-      var highsc = thisTeam.get('highScorer') || "fdsaf";
-      console.log(thisTeam.get('highScorer').get('name'));
-      var teamHighScorer = thisTeam.get('highScorer');
-      if(teamHighScorer.get('id') === this.get('id')) {
-          return true;
-      } else {
-          return false;
-      }
-  }.property('steam'),
+  //
+  // isHighScorer: function() {
+  //     var thisTeam = this.get('steam');
+  //   //   var highsc = thisTeam.get('highScorer') || "fdsaf";
+  //   //   console.log(thisTeam.get('highScorer').get('name'));
+  //     var teamHighScorer = thisTeam.get('highScorer');
+  //     if(teamHighScorer.get('id') === this.get('id')) {
+  //         return true;
+  //     } else {
+  //         return false;
+  //     }
+  // }.property('steam'),
 
 });
