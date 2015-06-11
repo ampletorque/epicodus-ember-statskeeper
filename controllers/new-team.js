@@ -12,7 +12,7 @@ StatsKeeper.NewTeamController = Ember.Controller.extend({
 
       var team = this.get('controllers.teams.model');
 
-      alert("outside: " + team.get('score'));
+    //   alert("outside: " + team.get('score'));
       this.set('name', null);
       this.transitionToRoute('teams');
     }

@@ -9,17 +9,17 @@ StatsKeeper.Team = DS.Model.extend({
       });
       return score;
   }.property("players"),
+  highScorer: function() {
+      var playstah;
+      var highscore = 0;
+      var playerz = this.get('players');
+      playerz.forEach(function(play) {
+          if (play.get('points') > highscore) {
+              playstah = play;
+              highscore = play.get('score');
+          }
+      })
+      return playstah;
+  }.property("players"),
 
 });
-
-
-// baskets: function() {
-//   var shotcount = this.get('shots');
-//   var count = 0;
-//   for(var i = 0; i < shotcount.length; i++) {
-//     if(shotcount[i]) {
-//       count++;
-//     }
-//   }
-//   return count;
-// }.property('shots'),
