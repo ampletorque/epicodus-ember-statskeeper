@@ -1,5 +1,5 @@
 StatsKeeper.NewTeamController = Ember.Controller.extend({
-    needs: ['teams'],
+  needs: ['teams'],
 
   actions: {
     save: function() {

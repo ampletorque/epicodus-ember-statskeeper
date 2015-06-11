@@ -1,5 +1,6 @@
 StatsKeeper.PlayerController = Ember.ObjectController.extend({
 
+
   actions: {
     success: function() {
       this.get('shots').pushObject(true);

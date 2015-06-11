@@ -8,6 +8,7 @@ StatsKeeper.NewPlayerController = Ember.Controller.extend({
         points: 0,
         successes: 0,
         misses: 0
+
       });
 
       player.save();
